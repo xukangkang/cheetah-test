@@ -1,4 +1,4 @@
-package org.kk.test.model;
+package org.kk.cheetah.test.model;
 
 import java.io.Serializable;
 

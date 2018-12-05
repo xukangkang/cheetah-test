@@ -26,4 +26,41 @@
 	    <version>0.0.1-SNAPSHOT</version>
 	</dependency>
   </dependencies>
+  
+    <build>
+     <plugins>
+        <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <!--这部分可有可无,加上的话则直接生成可运行jar包  试过没成功-->
+                    <archive>
+                       <manifest> 
+                            <!--有main方法的类的名称 要全名 -->
+                            <mainClass>org.kk.cheetah.test.ServerTest</mainClass>
+                       </manifest>
+                       <manifest> 
+                            <!--有main方法的类的名称 要全名 -->
+                            <mainClass>org.kk.cheetah.test.ProducerTest</mainClass>
+                       </manifest>
+                       <manifest> 
+                            <!--有main方法的类的名称 要全名 -->
+                            <mainClass>org.kk.cheetah.test.ConsumerTest</mainClass>
+                       </manifest>
+                   </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                 <executions>
+                        <execution><!-- 配置执行器 -->
+                             <id>make-assembly</id>
+                             <phase>package</phase> <!-- 绑定到package生命周期阶段上 -->
+                             <goals>
+                                  <goal>single</goal><!-- 只运行一次 -->   
+                             </goals>
+                        </execution>
+                   </executions>
+            </plugin>
+    </plugins>
+  </build>
 </project>

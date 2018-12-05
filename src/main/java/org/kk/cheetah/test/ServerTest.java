@@ -1,4 +1,4 @@
-package org.kk.test;
+package org.kk.cheetah.test;
 
 import org.kk.cheetah.CheetahServer;
 
